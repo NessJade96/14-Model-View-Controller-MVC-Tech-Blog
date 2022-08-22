@@ -40,4 +40,4 @@ Heroku:
 
 2. Mock HTML set up for tailwind css and page layout planning, all pages. 
 
-
+3. 
