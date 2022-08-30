@@ -1,0 +1,27 @@
+<!-- DASHBOARD -->
+    <h1
+    class="p-2 m-3 text-3xl font-bold text-orange-500 rounded-lg bg-amber-100 drop-shadow-xl max-w-max"
+    >
+    Your Dashboard
+    </h1>
+</nav>
+<!-- YOUR DASHBOARD -> BLOGPOSTS -->
+{{#each posts as |post| }}
+    <div class="px-10 py-3" style="margin: 0 8rem">
+        <article class="m-2 my-4 border-orange-300">
+        <div class="flex p-2 m-2 bg-orange-300 rounded text-amber-100">
+            <a class="flex-auto font-bold" href="/updatePost/{{post.id}}">{{post.title}}</a> <!-- double check naming -->
+            <p>{{format_date project.date_created}}</p>
+        </div>
+        </article>
+    </div>
+{{/each}}
+<!-- NEW POST - BUTTON -->
+<div class="text-center">
+    <button
+    type="button"
+    class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
+    >
+    <a href="/newPost"> + New Post</a>
+    </button>
+</div>

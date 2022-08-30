@@ -1,0 +1,43 @@
+<!-- DASHBOARD -->
+    <h1
+    class="p-2 m-3 text-3xl font-bold text-orange-500 rounded-lg bg-amber-100 drop-shadow-xl max-w-max"
+    >
+    Your Dashboard
+    </h1>
+</nav>
+<!-- UPDATE POST -->
+<div class="px-10 py-3" style="margin: 0 8rem">
+    <article class="m-2 my-4 border-4 border-orange-300 border-solid">
+    <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
+        <p class="font-bold">Update Post</p>
+    </div>
+    <p class="p-3 text-orange-700">
+        Title
+        <input
+        type="text"
+        class="block text-2xl border-2 border-orange-300 border-solid"
+        >{{post.title}}</input>
+    </p>
+    <p class="p-3 text-orange-700">
+        Content
+        <textarea
+        type="text"
+        cols="30"
+        rows="4"
+        class="block text-2xl border-2 border-orange-300 border-solid"
+        >{{post.description}}</textarea>
+    </p>
+    <button
+        type="button"
+        class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
+    >
+        <a href="/dashboard">Update Post</a> 
+    </button>
+    <button
+        type="button"
+        class="p-2 px-10 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
+    >
+       <a href="/dashboard">Delete</a> 
+    </button>
+    </article>
+</div>
