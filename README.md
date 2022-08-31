@@ -45,3 +45,5 @@ Heroku:
 3. Added in the comment html text that was missing in the last commit. 
 
 4. Moving the html into seperate html pages (still mock ups for handlebars.)
+
+5. Created the users in the MVC, started on comments and blog_posts. Able to load the homepage on the local server through the browser - all styling applied. 
