@@ -5,16 +5,16 @@
     The Techy Blog
     </h1>
 </nav>
-<!-- Loop over each object in the projects array -->
+<!-- Loop over each object in the posts array -->
 {{#each posts as |post| }}
     <div class="px-10 py-3" style="margin: 0 8rem">
       <article class="m-2 my-4 border-4 border-orange-300 border-solid">
         <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
             <a class="flex-auto font-bold" href="/commentBlog/{{post.id}}">{{post.title}}</a> <!-- double check naming -->
-            <p>Posted by: {{post.user.name}} on {{format_date project.date_created}}</p>
+            <p>Posted by: {{post.user.name}} on {{format_date post.date_created}}</p>
         </div>
         <p class="p-2 text-orange-700">
-            {{project.description}}
+            {{post.blog_post}}
         </p>
       </article>
     </div>

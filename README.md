@@ -49,3 +49,5 @@ Heroku:
 5. Created the users in the MVC, started on comments and blog_posts. Able to load the homepage on the local server through the browser - all styling applied. 
 
 6. Adding in the Post routes, and changing the commentRoutes to reflect users commenting. 
+
+7. Creating the homeRoutes to navigate through the application. Seeded the database
