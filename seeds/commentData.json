@@ -1,17 +1,32 @@
 [
 	{
-		"title": "Why MVC is so important",
-		"blog_post": "MVC allows developers to maintain a true separation of concerns, devising their code between the Model later for data, the View later for design, and the Controller layer for application logic.",
-		"date_created": "August 16, 2022"
+		"user_id": 2,
+		"user_comment": "I loved learning about this!",
+		"post_id": 1
 	},
 	{
-		"title": "Authentication vs. Authorization",
-		"blog_post": "There is a difference between authentication and authorization. Authentication means confirming your own identity, whereas authorization means being allowed access the system.",
-		"date_created": "August 30, 2022"
+		"user_id": 1,
+		"user_comment": "Awesome!",
+		"post_id": 2
 	},
 	{
-		"title": "Learning to code",
-		"blog_post": "Learning to code in 24 weeks in intense, but also very exciting to see my skills develop in such a short amount of time! loving this.",
-		"date_created": "August 31, 2022"
+		"user_id": 2,
+		"user_comment": "I couldn't agree more!!",
+		"post_id": 1
+	},
+	{
+		"user_id": 3,
+		"user_comment": "This is great",
+		"post_id": 2
+	},
+	{
+		"user_id": 1,
+		"user_comment": "Would you like to link up? I love your work.",
+		"post_id": 3
+	},
+	{
+		"user_id": 3,
+		"user_comment": "So true",
+		"post_id": 2
 	}
 ]
