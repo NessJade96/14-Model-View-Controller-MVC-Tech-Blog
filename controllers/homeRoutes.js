@@ -11,7 +11,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
 		});
 
 		const user = userData.get({ plain: true });
-
 		res.render('dashboard', {
 			...user,
 			logged_in: true,
@@ -44,43 +43,44 @@ router.get('/updatePost/:id', withAuth, async (req, res) => {
 		const userData = await User.findByPk(req.session.user_id, {
 			attributes: { exclude: ['password'] },
 		});
-
+		const postData = await Post.findByPk(req.params.id, {
+			attributes: { exclude: ['password'] },
+			include: [{ model: User }, { model: Comment, include: [User] }],
+		});
+		const post = postData.get({ plain: true });
 		const user = userData.get({ plain: true });
 		res.render('updatePost', {
 			...user,
+			...post,
 			logged_in: true,
 		});
 	} catch (err) {
 		res.status(500).json(err);
+		console.log(err);
 	}
 });
 
 //render the list of blog posts -- homepage loads but no posts?
 router.get('/homepage', withAuth, async (req, res) => {
 	let user = null;
-	let post = null;
-
+	let posts = null;
 	try {
 		const userData = await User.findByPk(req.session.user_id, {
 			attributes: { exclude: ['password'] },
 		});
+
 		const postData = await Post.findAll({
-			where: { type: 'post' },
 			include: [{ model: User }, { model: Comment }],
 		});
-		if (!postData) {
-			res.status(400).json({ message: 'can not find post data' });
-			return;
-		}
-		post = postData.get({ plain: true });
+		posts = postData.map((item) => item.get({ plain: true }));
 		user = userData.get({ plain: true });
 	} catch (err) {
 		user = null;
+		console.log(err);
 	}
-
 	res.render('homepage', {
 		...user,
-		...post,
+		posts,
 		logged_in: !!req.session.logged_in,
 	});
 });
@@ -106,6 +106,7 @@ router.get('/commentblog/post/:id', withAuth, async (req, res) => {
 		});
 	} catch (err) {
 		res.status(500).json(err);
+		console.log(err);
 	}
 });
 

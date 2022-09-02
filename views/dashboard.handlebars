@@ -6,16 +6,20 @@
     </h1>
 </nav>
 <!-- YOUR DASHBOARD -> BLOGPOSTS -->
+{{#if posts.length}}
 {{#each posts as |post| }}
     <div class="px-10 py-3" style="margin: 0 8rem">
         <article class="m-2 my-4 border-orange-300">
         <div class="flex p-2 m-2 bg-orange-300 rounded text-amber-100">
             <a class="flex-auto font-bold" href="/updatePost/{{post.id}}">{{post.title}}</a> <!-- double check naming -->
-            <p>{{format_date project.date_created}}</p>
+            <p>{{format_date post.date_created}}</p>
         </div>
         </article>
     </div>
 {{/each}}
+{{else}}
+<p class="font-medium text-center text-orange-400">You have no posts yet, click New Post below:</p>
+{{/if}}
 <!-- NEW POST - BUTTON -->
 <div class="text-center">
     <button

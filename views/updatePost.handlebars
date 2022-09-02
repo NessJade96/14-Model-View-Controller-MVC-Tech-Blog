@@ -11,33 +11,34 @@
     <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
         <p class="font-bold">Update Post</p>
     </div>
+    <form action="">
     <p class="p-3 text-orange-700">
         Title
         <input
         type="text"
-        class="block text-2xl border-2 border-orange-300 border-solid"
-        >{{post.title}}</input>
+        id="blog-title"
+        class="block text-2xl border-2 border-orange-300 border-solid" value="{{title}}"
+        ></input>
     </p>
     <p class="p-3 text-orange-700">
         Content
         <textarea
         type="text"
+        id="blog-content"
         cols="30"
         rows="4"
         class="block text-2xl border-2 border-orange-300 border-solid"
-        >{{post.description}}</textarea>
+        >{{blog_post}}</textarea>
     </p>
-    <button
-        type="button"
-        class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
-    >
-        <a href="/dashboard">Update Post</a> 
-    </button>
-    <button
-        type="button"
-        class="p-2 px-10 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
-    >
-       <a href="/dashboard">Delete</a> 
-    </button>
+    <input type="hidden" id="post-id" value="{{this.id}}">
+    <button type="button"
+        class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100" id="update-post"
+    >Update Post</button>
+    <button type="button"
+        class="p-2 px-10 m-3 font-medium bg-orange-400 rounded-lg text-amber-100" value="{{this.id}}" id="delete-post"
+    >Delete</button>
+    </form>
     </article>
 </div>
+
+<script src="/js/updatePost.js"></script>

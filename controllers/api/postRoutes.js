@@ -33,15 +33,26 @@ router.put('/:id', withAuth, async (req, res) => {
 	}
 });
 
-// NOT sure if I need to delete the posts?
 router.delete('/:id', withAuth, async (req, res) => {
 	try {
+		console.log(
+			'🚀 ~ file: postRoutes.js ~ line 41 ~ router.delete ~ req.params.id',
+			req.params.id
+		);
+		console.log(
+			'🚀 ~ file: postRoutes.js ~ line 43 ~ router.delete ~ req.session.user_id',
+			req.session.user_id
+		);
 		const postData = await Post.destroy({
 			where: {
 				id: req.params.id,
 				user_id: req.session.user_id,
 			},
 		});
+		console.log(
+			'🚀 ~ file: postRoutes.js ~ line 46 ~ router.delete ~ postData',
+			postData
+		);
 
 		if (!postData) {
 			res.status(404).json({ message: 'No Post found!' });
@@ -50,6 +61,7 @@ router.delete('/:id', withAuth, async (req, res) => {
 		res.status(200).json(postData);
 	} catch (err) {
 		res.status(500).json(err);
+		console.log(err);
 	}
 });
 

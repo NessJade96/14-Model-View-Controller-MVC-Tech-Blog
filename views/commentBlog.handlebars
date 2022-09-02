@@ -9,14 +9,21 @@
     <div class="px-10 py-3" style="margin: 0 8rem">
       <article class="m-2 my-4 border-4 border-orange-300 border-solid">
         <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
-          <p class="flex-auto font-bold">{{name}}</p>
-          <p class="">Posted by {{user.name}} on {{format_date date_created}}</p>
+          <p class="flex-auto font-bold">{{this.name}}</p>
+          <p class="">Posted by {{this.user.name}} on {{format_date date_created}}</p>
         </div>
         <p class="p-2 text-orange-700">
-            {{description}}
+            {{this.description}}
         </p>
       </article>
       <article class="m-2 my-4 border-4 border-orange-300 border-solid">
+        <div class="comments">
+            {{#each comments as |comment|}}
+            <div>
+                {{comment.user.username}}: {{comment.user_comment}}
+            </div>
+            {{/each}}
+        </div>
         <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
           <p class="font-bold">Add your comment</p>
         </div>

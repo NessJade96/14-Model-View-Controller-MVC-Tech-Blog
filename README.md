@@ -51,3 +51,5 @@ Heroku:
 6. Adding in the Post routes, and changing the commentRoutes to reflect users commenting. 
 
 7. Creating the homeRoutes to navigate through the application. Seeded the database
+
+8. Changed some of the get routes as they weren't loading the content correctly, and updated JS files to 'update post'
