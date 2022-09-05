@@ -2,7 +2,8 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.post('/', async (req, res) => {
+	console.log('yetsgfdsvas');
 	try {
 		const newPost = await Post.create({
 			...req.body,
@@ -35,14 +36,6 @@ router.put('/:id', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
 	try {
-		console.log(
-			'🚀 ~ file: postRoutes.js ~ line 41 ~ router.delete ~ req.params.id',
-			req.params.id
-		);
-		console.log(
-			'🚀 ~ file: postRoutes.js ~ line 43 ~ router.delete ~ req.session.user_id',
-			req.session.user_id
-		);
 		const postData = await Post.destroy({
 			where: {
 				id: req.params.id,

@@ -15,6 +15,7 @@
         Title
         <input
         type="text"
+        id="postTitle"
         class="block text-2xl border-2 border-orange-300 border-solid"
         />
     </p>
@@ -23,15 +24,18 @@
         <textarea
         type="text"
         cols="30"
+        id="blog_post"
         rows="4"
         class="block text-2xl border-2 border-orange-300 border-solid"
         ></textarea>
     </p>
     <button
-        type="button"
+        type="button" id="send"
         class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
     >
        <a href="/dashboard">Create</a> 
     </button>
     </article>
 </div>
+
+<script src="./js/newPost.js"></script>

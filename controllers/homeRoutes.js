@@ -61,7 +61,7 @@ router.get('/updatePost/:id', withAuth, async (req, res) => {
 });
 
 //render the list of blog posts -- homepage loads but no posts?
-router.get('/homepage', withAuth, async (req, res) => {
+router.get('/homepage', async (req, res) => {
 	let user = null;
 	let posts = null;
 	try {
@@ -75,7 +75,6 @@ router.get('/homepage', withAuth, async (req, res) => {
 		posts = postData.map((item) => item.get({ plain: true }));
 		user = userData.get({ plain: true });
 	} catch (err) {
-		user = null;
 		console.log(err);
 	}
 	res.render('homepage', {
@@ -85,8 +84,8 @@ router.get('/homepage', withAuth, async (req, res) => {
 	});
 });
 
-//render individual posts page commentBlog.handlebars -- This doesn't work?
-router.get('/commentblog/post/:id', withAuth, async (req, res) => {
+//render individual posts page commentBlog.handlebars
+router.get('/commentblog/:id', withAuth, async (req, res) => {
 	try {
 		const postData = await Post.findByPk(req.params.id, {
 			attributes: { exclude: ['password'] },

@@ -6,23 +6,26 @@
     </h1>
 </nav>
 <!-- COMMENT ON POST  -->
-    <div class="px-10 py-3" style="margin: 0 8rem">
+    <div class="px-10 py-3 post" style="margin: 0 8rem" data-post="{{this.id}}">
+        
       <article class="m-2 my-4 border-4 border-orange-300 border-solid">
         <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
           <p class="flex-auto font-bold">{{this.name}}</p>
           <p class="">Posted by {{this.user.name}} on {{format_date date_created}}</p>
         </div>
         <p class="p-2 text-orange-700">
-            {{this.description}}
+            {{this.blog_post}}
         </p>
-      </article>
-      <article class="m-2 my-4 border-4 border-orange-300 border-solid">
-        <div class="comments">
-            {{#each comments as |comment|}}
-            <div>
-                {{comment.user.username}}: {{comment.user_comment}}
-            </div>
-            {{/each}}
+        </article>
+        <article class="m-2 my-4 border-4 border-orange-300 border-solid">
+            <div class="comments">
+                {{#each comments as |comment|}}
+                <article class="m-2 my-4 border-4 border-orange-300 border-solid">
+            <p class="p-2 text-orange-700">
+                {{comment.user_comment}}<br>-{{comment.user.name}}<br>-{{format_date date_created}}
+            </p>
+        </article>
+        {{/each}}
         </div>
         <div class="flex p-2 m-2 bg-orange-400 text-amber-100">
           <p class="font-bold">Add your comment</p>
@@ -33,6 +36,7 @@
             type="textbox"
             cols="30"
             rows="4"
+            id="new-comment"
             class="block text-2xl border-2 border-orange-300 border-solid"
           ></textarea>
         </p>
@@ -40,10 +44,12 @@
         <div class="flex">
           <button
             type="button"
-            class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100"
+            class="p-2 px-3 m-3 font-medium bg-orange-400 rounded-lg text-amber-100" id="send"
           >
             Submit
           </button>
         </div>
       </article>
     </div>
+
+<script src="/js/newComment.js"></script>
