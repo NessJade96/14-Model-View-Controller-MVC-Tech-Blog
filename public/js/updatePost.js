@@ -23,17 +23,14 @@ const updateFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+	event.preventDefault();
+	const id = document.querySelector('#post-id').value;
 	console.log(
-		"🚀 ~ file: updatePost.js ~ line 27 ~ delButtonHandler ~ event.target.hasAttribute('value')",
-		event.target.hasAttribute('value')
+		'🚀 ~ file: updatePost.js ~ line 29 ~ delButtonHandler ~ id',
+		id
 	);
-	if (event.target.hasAttribute('value')) {
-		const id = event.target.getAttribute('value');
-		console.log(
-			'🚀 ~ file: updatePost.js ~ line 28 ~ delButtonHandler ~ id',
-			id
-		);
 
+	if (id) {
 		const response = await fetch(`/api/posts/${id}`, {
 			method: 'DELETE',
 		});
