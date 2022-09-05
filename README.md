@@ -14,7 +14,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ## Links:
 
 GitHub: https://github.com/NessJade96/14-Model-View-Controller-MVC-Tech-Blog
-Heroku: 
+Heroku: https://shielded-coast-87876.herokuapp.com/
 
 ## planning notes: 
 1. Create homepage: existing blog posts, nav links (homepage / dashboard), and log in. This means creating links to the pages 
@@ -56,3 +56,5 @@ Heroku:
 10. Removed the withAuth from the /homepage routes. Changed the route for  commentBlog, now this navigates and displays the content. I also changed some handlebars styling for the user comments. Users can now create new posts through newPost.js. 
 
 11. Removed my mock html pages, on the signup page I added the 'name' section as that was required for seeding the database when signing up. Added in some restrictions on the cookies. 
+
+12. deployed to Heroku, changed the "/homepages" to just "/". 
