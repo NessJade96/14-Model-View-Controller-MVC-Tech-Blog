@@ -61,7 +61,7 @@ router.get('/updatePost/:id', withAuth, async (req, res) => {
 });
 
 //render the list of blog posts -- homepage loads but no posts?
-router.get('/homepage', async (req, res) => {
+router.get('/', async (req, res) => {
 	let user = null;
 	let posts = null;
 	try {
@@ -113,7 +113,7 @@ router.get('/commentblog/:id', withAuth, async (req, res) => {
 router.get('/signup', (req, res) => {
 	// If the user is already logged in, redirect the request to another route
 	if (req.session.logged_in) {
-		res.redirect('/homepage');
+		res.redirect('/');
 		return;
 	}
 	res.render('signup');
@@ -123,7 +123,7 @@ router.get('/signup', (req, res) => {
 router.get('/login', (req, res) => {
 	// If the user is already logged in, redirect the request to another route
 	if (req.session.logged_in) {
-		res.redirect('/homepage');
+		res.redirect('/');
 		return;
 	}
 	res.render('login');

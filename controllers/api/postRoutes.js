@@ -42,10 +42,6 @@ router.delete('/:id', withAuth, async (req, res) => {
 				user_id: req.session.user_id,
 			},
 		});
-		console.log(
-			'🚀 ~ file: postRoutes.js ~ line 46 ~ router.delete ~ postData',
-			postData
-		);
 
 		if (!postData) {
 			res.status(404).json({ message: 'No Post found!' });
