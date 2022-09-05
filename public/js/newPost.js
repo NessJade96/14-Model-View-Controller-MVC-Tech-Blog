@@ -16,6 +16,7 @@ const newBlogPost = async (event) => {
 	});
 
 	if (response.ok) {
+		//If successful then user will be taken to their dashboard of blog posts.
 		document.location.replace('/dashboard');
 	} else {
 		alert('Failed to create post.');
